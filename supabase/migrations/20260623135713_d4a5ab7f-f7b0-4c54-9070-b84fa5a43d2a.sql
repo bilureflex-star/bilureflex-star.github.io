@@ -1,0 +1,1 @@
+ALTER TYPE public.doc_module ADD VALUE IF NOT EXISTS 'corporate';

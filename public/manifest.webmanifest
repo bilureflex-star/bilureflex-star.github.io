@@ -1,0 +1,16 @@
+{
+  "name": "DocMaster AI",
+  "short_name": "DocMaster",
+  "description": "Crie, formate e valide documentos acadêmicos, jurídicos, administrativos e corporativos com IA.",
+  "start_url": "/dashboard",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b1411",
+  "theme_color": "#10b981",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

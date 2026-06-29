@@ -1,0 +1,9 @@
+# DocMaster AI
+
+> Plataforma SaaS que automatiza a criação, formatação, validação e gestão de documentos acadêmicos, jurídicos e administrativos com Inteligência Artificial e um Motor de Normas Dinâmicas.
+
+DocMaster AI gera estrutura, formatação, citações e referências (ABNT, APA, MLA, Vancouver, Chicago) para TCCs, monografias, artigos, petições, sentenças, ofícios, memorandos e pareceres. O usuário escreve; a plataforma cuida das regras.
+
+## Pages
+- [Início](/): Visão geral do produto, módulos, motor de IA, normas e planos.
+- [Entrar](/auth): Acesso e criação de conta.
