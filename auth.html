@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entrar — DocMaster AI</title>
+  <meta name="theme-color" content="#10b981" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .auth-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; background-image: var(--gradient-hero); padding: 1.5rem; }
+    .auth-card { width: 100%; max-width: 26rem; background: var(--card); border: 1px solid var(--border); border-radius: 1rem; padding: 2rem; box-shadow: var(--shadow-elegant); }
+    .auth-tabs { display: flex; gap: 0.5rem; margin: 1.25rem 0; }
+    .auth-tab { flex: 1; padding: 0.5rem; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--card); cursor: pointer; font-family: var(--font-sans); font-weight: 500; }
+    .auth-tab.active { background: var(--primary); color: var(--primary-foreground); border-color: var(--primary); }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; margin-bottom: 0.35rem; }
+    .field input { width: 100%; padding: 0.6rem 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border); font-family: var(--font-sans); font-size: 0.95rem; background: var(--background); }
+    .field input:focus { outline: 2px solid oklch(0.7 0.15 163 / 0.4); outline-offset: 1px; }
+    .auth-note { margin-top: 1rem; font-size: 0.8rem; color: var(--muted-foreground); text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <a class="brand" href="index.html">
+        <svg class="icon icon-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+        DocMaster <span class="text-primary">AI</span>
+      </a>
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login" type="button">Entrar</button>
+        <button class="auth-tab" data-tab="signup" type="button">Criar conta</button>
+      </div>
+      <form onsubmit="return false;">
+        <div class="field" id="name-field" style="display:none;">
+          <label for="name">Nome completo</label>
+          <input id="name" type="text" placeholder="Seu nome" autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" placeholder="voce@email.com" autocomplete="email" />
+        </div>
+        <div class="field">
+          <label for="password">Senha</label>
+          <input id="password" type="password" placeholder="••••••••" autocomplete="current-password" />
+        </div>
+        <button class="btn btn-primary btn-lg" type="submit" style="width:100%;" id="submit-btn">Entrar</button>
+      </form>
+      <p class="auth-note">Versão estática de demonstração. Para acessar sua conta, use o aplicativo DocMaster AI.</p>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll(".auth-tab").forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        document.querySelectorAll(".auth-tab").forEach(function (t) { t.classList.remove("active"); });
+        tab.classList.add("active");
+        var isSignup = tab.dataset.tab === "signup";
+        document.getElementById("name-field").style.display = isSignup ? "block" : "none";
+        document.getElementById("submit-btn").textContent = isSignup ? "Criar conta" : "Entrar";
+      });
+    });
+  </script>
+</body>
+</html>
